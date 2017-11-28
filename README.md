@@ -1,12 +1,24 @@
 # docker-zcash
 
+## build zcash container
+
 ```
 docker build -t eyp/zcash .
 ```
 
+## start zcash container
+
 ```
-docker run -d -t eyp/zcash
+mkdir -p ~/.zcash
+echo "addnode=mainnet.z.cash" >~/.zcash/zcash.conf
+echo "rpcuser=username" >>~/.zcash/zcash.conf
+echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >>~/.zcash/zcash.conf
+echo 'gen=1' >> ~/.zcash/zcash.conf
+echo "genproclimit=-1" >> ~/.zcash/zcash.conf
+docker run -d -v ~/.zcash:/root/.zcash -t zcash
 ```
+
+## show zcash output
 
 ```
 $ docker ps
@@ -52,6 +64,8 @@ Since starting this node 21 minutes, 28 seconds ago:
 [Press Ctrl+C to exit] [Set 'showmetrics=0' to hide]
 $
 ```
+
+## getinfo
 
 ```
 $ docker exec -i -t f433dfed996f /usr/local/src/zcash/src/zcash-cli getinfo
