@@ -15,7 +15,7 @@ echo "rpcuser=username" >>~/.zcash/zcash.conf
 echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >>~/.zcash/zcash.conf
 echo 'gen=1' >> ~/.zcash/zcash.conf
 echo "genproclimit=-1" >> ~/.zcash/zcash.conf
-docker run -d -v ~/.zcash:/root/.zcash -t zcash
+docker run -d -v ~/.zcash:/root/.zcash -t eyp/zcash
 ```
 
 ## show zcash output
