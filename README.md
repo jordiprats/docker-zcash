@@ -52,3 +52,24 @@ Since starting this node 21 minutes, 28 seconds ago:
 [Press Ctrl+C to exit] [Set 'showmetrics=0' to hide]
 $
 ```
+
+```
+$ docker exec -i -t f433dfed996f /usr/local/src/zcash/src/zcash-cli getinfo
+{
+  "version": 1001350,
+  "protocolversion": 170002,
+  "walletversion": 60000,
+  "balance": 0.00000000,
+  "blocks": 27667,
+  "timeoffset": 0,
+  "connections": 5,
+  "proxy": "",
+  "difficulty": 910286.4629894558,
+  "testnet": false,
+  "keypoololdest": 1511954296,
+  "keypoolsize": 101,
+  "paytxfee": 0.00000000,
+  "relayfee": 0.00000100,
+  "errors": ""
+}
+```
